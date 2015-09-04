@@ -6,10 +6,10 @@
    <artifactId>artemis-wildfly-integration</artifactId>
    <packaging>jar</packaging>
    <name>ActiveMQ Artemis WildFly Integration</name>
-   <version>1.0.2-SNAPSHOT</version>
+   <version>1.0.2-wildfly-1-SNAPSHOT</version>
 
    <properties>
-      <artemis.version>1.0.1-SNAPSHOT</artemis.version>
+      <artemis.version>1.1.0-wildfly-1</artemis.version>
    </properties>
 
    <parent>
@@ -34,6 +34,13 @@
       </repository>
    </repositories>
 
+   <scm>
+      <connection>scm:git:git@github.com:wildfly/artemis-wildfly-integration.git</connection>
+      <developerConnection>scm:git:git@github.com:wildfly/artemis-wildfly-integration.git</developerConnection>
+      <url>https://github.com/wildfly/artemis-wildfly-integration</url>
+      <tag>HEAD</tag>
+   </scm>
+ 
    <dependencies>
       <!--
       JBoss Tools
@@ -167,6 +174,13 @@
                <source>1.7</source>
                <target>1.7</target>
             </configuration>
+         </plugin>
+         <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-javadoc-plugin</artifactId>
+           <configuration>
+             <additionalparam>-Xdoclint:none</additionalparam>
+           </configuration>
          </plugin>
       </plugins>
    </build>
